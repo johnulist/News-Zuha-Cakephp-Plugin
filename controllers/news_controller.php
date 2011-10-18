@@ -88,9 +88,9 @@ class NewsController extends NewsAppController {
 	}
 
 	function add() {
-		if (!empty($this->data)) {
+		if (!empty($this->request->data)) {
 			$this->News->create();
-			if ($this->News->save($this->data)) {
+			if ($this->News->save($this->request->data)) {
 				$this->flash(__('News saved.', true), array('action' => 'index'));
 			} else {
 			}
@@ -98,17 +98,17 @@ class NewsController extends NewsAppController {
 	}
 
 	function edit($id = null) {
-		if (!$id && empty($this->data)) {
+		if (!$id && empty($this->request->data)) {
 			$this->flash(sprintf(__('Invalid news', true)), array('action' => 'index'));
 		}
-		if (!empty($this->data)) {
-			if ($this->News->save($this->data)) {
+		if (!empty($this->request->data)) {
+			if ($this->News->save($this->request->data)) {
 				$this->flash(__('The news has been saved.', true), array('action' => 'index'));
 			} else {
 			}
 		}
-		if (empty($this->data)) {
-			$this->data = $this->News->read(null, $id);
+		if (empty($this->request->data)) {
+			$this->request->data = $this->News->read(null, $id);
 		}
 	}
 
@@ -135,9 +135,9 @@ class NewsController extends NewsAppController {
 	}
 
 	function admin_add() {
-		if (!empty($this->data)) {
+		if (!empty($this->request->data)) {
 			$this->News->create();
-			if ($this->News->save($this->data)) {
+			if ($this->News->save($this->request->data)) {
 				$this->flash(__('News saved.', true), array('action' => 'index'));
 			} else {
 			}
@@ -145,17 +145,17 @@ class NewsController extends NewsAppController {
 	}
 
 	function admin_edit($id = null) {
-		if (!$id && empty($this->data)) {
+		if (!$id && empty($this->request->data)) {
 			$this->flash(sprintf(__('Invalid news', true)), array('action' => 'index'));
 		}
-		if (!empty($this->data)) {
-			if ($this->News->save($this->data)) {
+		if (!empty($this->request->data)) {
+			if ($this->News->save($this->request->data)) {
 				$this->flash(__('The news has been saved.', true), array('action' => 'index'));
 			} else {
 			}
 		}
-		if (empty($this->data)) {
-			$this->data = $this->News->read(null, $id);
+		if (empty($this->request->data)) {
+			$this->request->data = $this->News->read(null, $id);
 		}
 	}
 
