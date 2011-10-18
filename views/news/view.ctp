@@ -1,27 +1,27 @@
 <div class="news view">
 <h2><?php  __('News');?></h2>
 	<dl><?php $i = 0; $class = ' class="altrow"';?>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php echo __('Id'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $news['News']['id']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Url'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php echo __('Url'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $news['News']['url']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Name'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php echo __('Name'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $news['News']['name']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Created'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php echo __('Created'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $news['News']['created']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php echo __('Modified'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $news['News']['modified']; ?>
 			&nbsp;
@@ -29,7 +29,7 @@
 	</dl>
 </div>
 <div class="actions">
-	<h3><?php __('Actions'); ?></h3>
+	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('Edit News', true), array('action' => 'edit', $news['News']['id'])); ?> </li>
 		<li><?php echo $this->Html->link(__('Delete News', true), array('action' => 'delete', $news['News']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $news['News']['id'])); ?> </li>
