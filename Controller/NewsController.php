@@ -1,8 +1,9 @@
 <?php
 class NewsController extends NewsAppController {
 
-	var $name = 'News';
-	var $helpers = array('Text');
+	public $name = 'News';
+	public $uses = 'News.News';
+	public $helpers = array('Text');
 	// var $components = array('Simplepie');
 	
 	
